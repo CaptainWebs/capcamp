@@ -15,9 +15,7 @@ var express         = require("express"),
     flash           = require("connect-flash"),
     campRoutes      = require("./routes/campgrounds");
 
-mongoose.connect("mongodb://nurlan:Iaready1995@ds161304.mlab.com:61304/bootcamp",{
-    useMongoClient:true,
-});
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+"/public"));
