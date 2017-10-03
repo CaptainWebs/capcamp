@@ -15,7 +15,7 @@ var express         = require("express"),
     flash           = require("connect-flash"),
     campRoutes      = require("./routes/campgrounds");
 
-mongoose.connect("mongodb://localhost/bootcamp_app",{
+mongoose.connect("mongodb://nurlan:Iaready1995@ds161304.mlab.com:61304/bootcamp",{
     useMongoClient:true,
 });
 
