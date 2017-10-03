@@ -1,0 +1,29 @@
+<% include partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+          <h5 class="display-4">All Current Bootcamps</h5>
+          <hr>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add New</a>
+          </p>
+        </div>
+    </header> 
+
+
+   <div class="row text-center">
+   <% campgrounds.forEach(function(campground){%>
+    
+     <div class="col-md-3 col-sm-6" style="background:url('<%= campground.imageUrl%>');height:200px;background-size:cover;">
+        
+        <h4 style="color:white;background:rgba(28,28,28,0.8);border-radius:5px;width:100%;padding:5px;margin-top:10px;"><%= campground.name%></h4>
+        <p><a href="/campgrounds/<%= campground._id%>" class="btn btn-small btn-primary">View More</a></p>
+        
+       
+    </div>
+    
+    <% }); %>
+
+    </div>
+  <% include partials/footer %>
+  </div>

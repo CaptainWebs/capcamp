@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+          <h3 class="display-3">Update a comment</h3>
+          <hr>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/campgrounds" role="button">Go Back</a>
+          </p>
+        </div>
+    </header> 
+    
+<form action="/campgrounds/<%= campground_id %>/comments/<%=comment._id%>?_method=PUT" method="POST" style="width:40%;height:auto;margin:0 auto;">
+    <input type="text" name="comment[text]" value="<%=comment.text%>">
+    <input type="submit">
+</form>
+
+</div>
+<% include ../partials/footer%>

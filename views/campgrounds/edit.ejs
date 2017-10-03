@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+          <h3 class="display-3">Update the <%= foundCampground.name%></h3>
+          <hr>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/campgrounds" role="button">Go Back</a>
+          </p>
+        </div>
+    </header> 
+    
+<form action="/campgrounds/<%=foundCampground._id%>?_method=PUT" method="POST" style="width:40%;height:auto;margin:0 auto;">
+    <input type="text" name="campground[name]" value="<%=foundCampground.name%>">
+    <input type="text" name="campground[imageUrl]" value="<%=foundCampground.imageUrl%>" >
+    <input type="text" name="campground[description]" value="<%=foundCampground.description%>"> 
+    <input type="submit">
+</form>
+
+</div>
+<% include ../partials/footer%>
