@@ -14,6 +14,10 @@ var express         = require("express"),
     methodOverride  = require("method-override"),
     flash           = require("connect-flash"),
     campRoutes      = require("./routes/campgrounds");
+    
+const getTheWeather = require("get-the-weather");
+
+
 
 mongoose.connect("mongodb://nurlan:Iaready1995@ds161304.mlab.com:61304/bootcamp");
 
@@ -54,6 +58,14 @@ app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(campRoutes);
 
+
+let options = {
+    zip: 10001,
+    DarkSkyKey: "8c62ba672d1b80a02bb183764d00e688",
+    ZipCodeApiKey: "QrgpnpYfDCMZKQRjF1AQh1UuoeIv96vZxLpVbobP1YPLPG5uIFl0Gfu5tdADj5DR"
+}
+
+getTheWeather(options).then(result => console.log(result.currently.temperature));
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Bootcamp server is started and running");
